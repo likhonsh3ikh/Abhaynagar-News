@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - পৃষ্ঠা পাওয়া যায়নি</title>
+    <link href="https://fonts.googleapis.com/css2?family=Siyam+Rupali&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        body {
+            font-family: 'Siyam Rupali', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .container h1 {
+            font-size: 3rem;
+            color: #e74c3c;
+        }
+
+        .container p {
+            font-size: 1.25rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .container a {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #2980b9;
+            color: white;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .container a:hover {
+            background-color: #1abc9c;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container h1 {
+                font-size: 2.5rem;
+            }
+            .container p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>দুঃখিত, আপনি যে পৃষ্ঠা অনুসন্ধান করেছেন তা পাওয়া যায়নি।</p>
+        <a href="/">হোম পেজে ফিরে যান</a>
+    </div>
+</body>
+</html>
