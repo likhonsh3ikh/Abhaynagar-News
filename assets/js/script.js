@@ -1,20 +1,21 @@
-// Fetch news data from Vercel API
-fetch('/api/news')
-    .then(response => response.json())
-    .then(newsArticles => {
-        const newsContainer = document.getElementById('news-container');
-        newsArticles.forEach(article => {
-            const articleCard = document.createElement('div');
-            articleCard.classList.add('bg-white', 'rounded-lg', 'shadow-lg', 'overflow-hidden');
-            articleCard.innerHTML = `
-                <img src="${article.ogImage}" alt="News Image" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-xl font-semibold mb-2">${article.title}</h3>
-                    <p class="text-gray-600 mb-4">${article.description}</p>
-                    <a href="${article.url}" class="text-blue-600 hover:text-blue-500">আরও পড়ুন &rarr;</a>
-                </div>
-            `;
-            newsContainer.appendChild(articleCard);
-        });
-    })
-    .catch(error => console.error('Error loading news:', error));
+document.addEventListener('DOMContentLoaded', async () => {
+    const newsList = document.getElementById('newsList');
+
+    const response = await fetch('/api/news');
+    const newsArticles = await response.json();
+
+    newsArticles.forEach((article) => {
+        const newsItem = document.createElement('div');
+        newsItem.classList.add('bg-white', 'p-4', 'rounded', 'shadow-lg');
+
+        newsItem.innerHTML = `
+            <h2 class="text-xl font-semibold">${article.title}</h2>
+            <p>${article.description}</p>
+            <img src="${article.banner}" alt="${article.title}" class="w-full h-auto mt-4 mb-4 rounded" />
+            <p class="text-gray-500 text-sm">By: ${article.author}</p>
+            <a href="/news/${article.id}.html" class="text-blue-500 hover:underline">Read more</a>
+        `;
+
+        newsList.appendChild(newsItem);
+    });
+});
