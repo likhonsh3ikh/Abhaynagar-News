@@ -3,73 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="অভয়নগর নিউজ: আপনার স্থানীয় সংবাদ">
-    <meta name="keywords" content="অভয়নগর, সংবাদ, বাংলাদেশ, খবর, স্থানীয় খবর">
+    <meta name="description" content="Abhaynagar News - Stay Updated with Local News">
     <meta name="author" content="Abhaynagar News">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="অভয়নগর নিউজ">
-    <meta property="og:description" content="অভয়নগর নিউজ - স্থানীয় সংবাদ">
+    <meta property="og:title" content="Abhaynagar News">
+    <meta property="og:description" content="Latest updates on local news from Abhaynagar">
     <meta property="og:image" content="/assets/images/logo.png">
     <meta property="og:url" content="https://abhaynagarnews.com">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="অভয়নগর নিউজ">
-    <meta property="twitter:description" content="অভয়নগর নিউজ - স্থানীয় সংবাদ">
-    <meta property="twitter:image" content="/assets/images/logo.png">
-    <meta property="twitter:url" content="https://abhaynagarnews.com">
-    <title>অভয়নগর নিউজ - স্থানীয় সংবাদ</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#3B82F6">
-    <link href="https://fonts.googleapis.com/css2?family=Solitreo&display=swap" rel="stylesheet">
+    <title>Abhaynagar News - স্থানীয় সংবাদ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Siyam+Rupali&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
-<body class="bg-gray-100 text-gray-800 font-serif">
+<body class="bg-gray-100 text-gray-800 font-sans">
 
     <!-- Header -->
     <header class="bg-white py-4 shadow-md">
-        <div class="container mx-auto flex justify-between items-center px-4">
-            <a href="/" class="text-3xl font-bold text-blue-600">অভয়নগর নিউজ</a>
-            <nav class="space-x-6 hidden md:flex">
-                <a href="/" class="text-lg hover:text-blue-600">হোম</a>
-                <a href="/about/" class="text-lg hover:text-blue-600">আমাদের সম্পর্কে</a>
-                <a href="/contact/" class="text-lg hover:text-blue-600">যোগাযোগ</a>
-            </nav>
-            <button class="md:hidden text-xl" id="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold">অভয়নগর নিউজ</h1>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="container mx-auto mt-16 px-4">
         <section class="text-center mb-8">
-            <h1 class="text-4xl font-bold text-gray-900 mb-4">স্বাগতম অভয়নগর নিউজে</h1>
-            <p class="text-lg mb-6">আপনার স্থানীয় সংবাদ এবং সেরা খবর সবার আগে জানুন।</p>
+            <h2 class="text-3xl font-semibold">সর্বশেষ সংবাদ</h2>
         </section>
 
-        <!-- Latest News -->
-        <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12">
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="https://via.placeholder.com/400x200" alt="News Image" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h3 class="text-xl font-semibold mb-2">ট্রাক চাপায় মোটরসাইকেল চালকসহ নিহত ২</h3>
-                    <p class="text-gray-600 mb-4">যশোরের অভয়নরে নওয়াপাড়া শংকরপাশা নড়াইল সড়কে ট্রাক চাপায় মোটরসাইকেল চালকসহ ২জন নিহত হয়েছে।</p>
-                    <a href="/news/news1.html" class="text-blue-600 hover:text-blue-500">আরও পড়ুন &rarr;</a>
-                </div>
-            </div>
-            <!-- Additional news cards go here -->
+        <!-- News List (Dynamic loading) -->
+        <section id="news-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <!-- News articles will be dynamically inserted here -->
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-100 py-6">
-        <div class="container mx-auto text-center">
-            <p class="text-sm">&copy; 2024 <strong>Likhon Sheikh & NK</strong>. All rights reserved.</p>
-            <p class="text-xs">Content may not be reproduced without giving proper credit. Copyright owner: <a href="mailto:mail@likhonsheikh.com" class="text-blue-300">mail@likhonsheikh.com</a></p>
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>
