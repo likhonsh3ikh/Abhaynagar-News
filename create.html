@@ -6,6 +6,8 @@
     <title>Create News - Abhaynagar News</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Bangla&display=swap" rel="stylesheet">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
 </head>
 <body class="bg-gray-100 font-bangla">
     <div class="container mx-auto p-4">
@@ -13,24 +15,72 @@
         <form id="newsForm" class="bg-white p-6 rounded shadow-lg" method="POST">
             <div class="mb-4">
                 <label for="title" class="block text-lg">Title:</label>
-                <input type="text" id="title" name="title" required class="w-full p-2 mt-2 border border-gray-300 rounded" />
+                <input type="text" id="title" name="title" required 
+                       placeholder="Enter news title" 
+                       class="w-full p-2 mt-2 border border-gray-300 rounded" />
             </div>
             <div class="mb-4">
                 <label for="description" class="block text-lg">Description:</label>
-                <textarea id="description" name="description" rows="4" required class="w-full p-2 mt-2 border border-gray-300 rounded"></textarea>
+                <textarea id="description" name="description" rows="4" required 
+                          placeholder="Enter a brief description" 
+                          class="w-full p-2 mt-2 border border-gray-300 rounded"></textarea>
             </div>
             <div class="mb-4">
                 <label for="author" class="block text-lg">Author:</label>
-                <input type="text" id="author" name="author" required class="w-full p-2 mt-2 border border-gray-300 rounded" />
+                <input type="text" id="author" name="author" required 
+                       placeholder="Enter author's name" 
+                       class="w-full p-2 mt-2 border border-gray-300 rounded" />
             </div>
             <div class="mb-4">
                 <label for="banner" class="block text-lg">Banner Image URL:</label>
-                <input type="url" id="banner" name="banner" required class="w-full p-2 mt-2 border border-gray-300 rounded" />
+                <input type="url" id="banner" name="banner" required 
+                       placeholder="Enter banner image URL" 
+                       class="w-full p-2 mt-2 border border-gray-300 rounded" />
+            </div>
+            <div class="mb-4">
+                <label for="category" class="block text-lg">Category (Optional):</label>
+                <input type="text" id="category" name="category" 
+                       placeholder="E.g., Technology, Sports" 
+                       class="w-full p-2 mt-2 border border-gray-300 rounded" />
+            </div>
+            <div class="mb-4">
+                <label for="keywords" class="block text-lg">Keywords (Optional):</label>
+                <input type="text" id="keywords" name="keywords" 
+                       placeholder="E.g., News, Local, Trending" 
+                       class="w-full p-2 mt-2 border border-gray-300 rounded" />
             </div>
             <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Create News</button>
         </form>
+
+        <div id="preview" class="mt-6 bg-gray-100 p-4 rounded shadow-lg hidden">
+            <h2 class="text-2xl font-bold">News Preview</h2>
+            <p id="preview-title" class="text-lg font-semibold mt-2"></p>
+            <p id="preview-description" class="mt-2"></p>
+            <p id="preview-author" class="mt-2 text-sm text-gray-500"></p>
+        </div>
     </div>
 
-    <script src="assets/js/create.js"></script>
+    <script>
+        document.getElementById("newsForm").addEventListener("input", () => {
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            const author = document.getElementById("author").value;
+
+            // Update meta tags dynamically
+            document.querySelector('meta[name="description"]').setAttribute('content', description);
+            document.querySelector('meta[name="keywords"]').setAttribute('content', title);
+
+            // Preview section
+            const preview = document.getElementById("preview");
+            if (title || description || author) {
+                preview.classList.remove("hidden");
+                document.getElementById("preview-title").textContent = title || "Title goes here";
+                document.getElementById("preview-description").textContent = description || "Description goes here";
+                document.getElementById("preview-author").textContent = `By: ${author || "Author's name"}`;
+            } else {
+                preview.classList.add("hidden");
+            }
+        });
+    </script>
 </body>
 </html>
