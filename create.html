@@ -3,77 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>নতুন সংবাদ তৈরি করুন</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <title>Create News - Abhaynagar News</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bangla&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-gray-800 font-serif">
-
-    <!-- Header -->
-    <header class="bg-white py-4 shadow-md">
-        <div class="container mx-auto text-center">
-            <h1 class="text-3xl font-bold">নতুন সংবাদ তৈরি করুন</h1>
-        </div>
-    </header>
-
-    <!-- Form -->
-    <main class="container mx-auto mt-8 px-4">
-        <form id="news-form" class="space-y-6">
-            <div>
-                <label for="title" class="block text-lg font-semibold">শিরোনাম</label>
-                <input type="text" id="title" class="w-full px-4 py-2 border rounded-lg" placeholder="সংবাদ শিরোনাম" required>
+<body class="bg-gray-100 font-bangla">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-6">Create a New News Article</h1>
+        <form id="newsForm" class="bg-white p-6 rounded shadow-lg" method="POST">
+            <div class="mb-4">
+                <label for="title" class="block text-lg">Title:</label>
+                <input type="text" id="title" name="title" required class="w-full p-2 mt-2 border border-gray-300 rounded" />
             </div>
-            <div>
-                <label for="content" class="block text-lg font-semibold">বিস্তারিত সংবাদ</label>
-                <textarea id="content" rows="6" class="w-full px-4 py-2 border rounded-lg" placeholder="সংবাদ বিস্তারিত" required></textarea>
+            <div class="mb-4">
+                <label for="description" class="block text-lg">Description:</label>
+                <textarea id="description" name="description" rows="4" required class="w-full p-2 mt-2 border border-gray-300 rounded"></textarea>
             </div>
-            <div class="text-center">
-                <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded-lg">সংবাদ প্রকাশ করুন</button>
+            <div class="mb-4">
+                <label for="author" class="block text-lg">Author:</label>
+                <input type="text" id="author" name="author" required class="w-full p-2 mt-2 border border-gray-300 rounded" />
             </div>
+            <div class="mb-4">
+                <label for="banner" class="block text-lg">Banner Image URL:</label>
+                <input type="url" id="banner" name="banner" required class="w-full p-2 mt-2 border border-gray-300 rounded" />
+            </div>
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Create News</button>
         </form>
-    </main>
+    </div>
 
-    <script>
-        document.getElementById('news-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const title = document.getElementById('title').value;
-            const content = document.getElementById('content').value;
-            const newsPage = `news/${title.replace(/\s+/g, '-').toLowerCase()}.html`;
-            const newsTemplate = `
-                <html lang="bn">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <meta name="description" content="${content}">
-                    <meta name="author" content="লিখন শেখ">
-                    <title>${title}</title>
-                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-                </head>
-                <body class="bg-gray-100 text-gray-800 font-serif">
-                    <header class="bg-white py-4 shadow-md">
-                        <div class="container mx-auto flex justify-between items-center px-4">
-                            <a href="/" class="text-3xl font-bold text-blue-600">অভয়নগর নিউজ</a>
-                        </div>
-                    </header>
-                    <main class="container mx-auto mt-16 px-4">
-                        <section class="text-center mb-8">
-                            <h1 class="text-4xl font-bold text-gray-900 mb-4">${title}</h1>
-                            <p class="text-lg mb-6">${content}</p>
-                        </section>
-                    </main>
-                    <footer class="bg-gray-800 text-gray-100 py-6">
-                        <div class="container mx-auto text-center">
-                            <p class="text-sm">&copy; 2024 <strong>Likhon Sheikh & NK</strong>. All rights reserved.</p>
-                        </div>
-                    </footer>
-                </body>
-                </html>
-            `;
-            const blob = new Blob([newsTemplate], { type: 'text/html' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = newsPage;
-            link.click();
-        });
-    </script>
+    <script src="assets/js/create.js"></script>
 </body>
 </html>
