@@ -1,30 +1,26 @@
 # Abhaynagar News
 
-Abhaynagar News is a local news portal showcasing the latest updates from Abhaynagar. The website is built using HTML, JavaScript, and Supabase for dynamic content loading.
+Abhaynagar News is a modern, responsive news portal built with Supabase for dynamic data management, including the ability to create news articles as an admin.
 
 ## Features
 
-- Automatically fetches news articles from Supabase.
-- Responsive and modern UI using Tailwind CSS.
-- Easy-to-use backend with Supabase for managing news.
+- Admin-only access for creating news.
+- News dynamically fetched from Supabase.
+- SEO and performance optimizations.
+- Mobile-first, fully responsive design.
+- Bangla font support for content.
 
-## Setup
+## Setup Instructions
 
-1. **Vercel Deployment**
-   - Clone this repository.
-   - Create a Vercel project and link it to the repository.
-   - Add the following environment variables in Vercel:
-     - `SUPABASE_URL`: Your Supabase URL.
-     - `SUPABASE_ANON_KEY`: Your Supabase anon key.
+1. Clone this repository.
+2. Set up environment variables in Vercel:
+   - `SUPABASE_URL`
+   - `SUPABASE_ANON_KEY`
+   - `ADMIN_USERNAME`
+   - `ADMIN_PASSWORD`
+3. Deploy to Vercel.
+4. Access the site and create news from `/create.html`.
 
-2. **Supabase Setup**
-   - Create a Supabase project.
-   - Set up a table called `news` with the following columns:
-     - `title` (Text)
-     - `description` (Text)
-     - `ogImage` (Text)
-     - `url` (Text)
-     - `created_at` (Timestamp)
+## Admin Login
 
-3. **Deploy to Vercel**
-   - Push your project to GitHub and deploy it on Vercel.
+Login is required to create news articles. Use the credentials set in the `.env` file.
