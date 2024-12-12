@@ -1,0 +1,22 @@
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+    process.env.SUPABASE_URL,  // Vercel Environment Variable
+    process.env.SUPABASE_ANON_KEY // Vercel Environment Variable
+);
+
+export async function getNews() {
+    try {
+        // Fetch news articles from the Supabase table (e.g., 'news')
+        const { data, error } = await supabase
+            .from('news')
+            .select('title, description, ogImage, url')
+            .order('created_at', { ascending: false });
+
+        if (error) throw error;
+        return data;
+    } catch (error) {
+        console.error('Error fetching news:', error);
+        return [];
+    }
+}
