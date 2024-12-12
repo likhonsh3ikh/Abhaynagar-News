@@ -3,38 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Abhaynagar News - Stay Updated with Local News">
-    <meta name="author" content="Abhaynagar News">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Abhaynagar News">
-    <meta property="og:description" content="Latest updates on local news from Abhaynagar">
-    <meta property="og:image" content="/assets/images/logo.png">
-    <meta property="og:url" content="https://abhaynagarnews.com">
-    <title>Abhaynagar News - স্থানীয় সংবাদ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Siyam+Rupali&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <title>Abhaynagar News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangla&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans">
-
-    <!-- Header -->
-    <header class="bg-white py-4 shadow-md">
-        <div class="container mx-auto text-center">
-            <h1 class="text-4xl font-bold">অভয়নগর নিউজ</h1>
-        </div>
+<body class="bg-gray-100 font-bangla">
+    <header class="bg-blue-600 text-white p-4">
+        <h1 class="text-3xl font-bold">Abhaynagar News</h1>
     </header>
-
-    <!-- Main Content -->
-    <main class="container mx-auto mt-16 px-4">
-        <section class="text-center mb-8">
-            <h2 class="text-3xl font-semibold">সর্বশেষ সংবাদ</h2>
-        </section>
-
-        <!-- News List (Dynamic loading) -->
-        <section id="news-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <!-- News articles will be dynamically inserted here -->
-        </section>
+    
+    <main class="container mx-auto p-4">
+        <div id="newsList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- News will be dynamically loaded here -->
+        </div>
     </main>
 
-    <script src="/assets/js/script.js"></script>
+    <footer class="bg-blue-600 text-white text-center py-4">
+        <p>&copy; 2024 Abhaynagar News. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
