@@ -1,0 +1,16 @@
+{
+  "name": "Abhaynagar News",
+  "short_name": "Abhaynagar",
+  "description": "অভয়নগর নিউজ - স্থানীয় সংবাদ",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3B82F6",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
